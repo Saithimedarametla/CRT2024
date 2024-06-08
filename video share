@@ -1,0 +1,52 @@
+“VideoShare” is an online video sharing platform. The company has decided to rate its users channels based on the sum total of the number of views received online and the subscribers. The sum total is reffered to as user points. The rating will be given according to the below charts:
+
+User points ratings: 30-50 Average 51-60 Good 61-80 Excellent 81-100 Outstanding
+
+The whole process is automated and it can be carried out by the company’s system.
+
+Input Format
+
+The input consists of an integer userpoints representing the calculated points
+
+Constraints
+
+30>= userpoints <=100
+
+Output Format
+
+Print rating if not possible print "Invalid Input"
+
+Sample Input 0
+
+77
+Sample Output 0
+
+Excellent
+
+  #include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int r;
+    scanf("%d",&r);
+    if(r<=50 && r>=30){
+        printf("Average");
+    }
+    else if(r<=60 && r>=51){
+        printf("Good");
+    }
+    else if(r<=80 && r>=61){
+        printf("Excellent");
+    }
+    else if(r<=100 && r>=81){
+        printf("Outstanding");
+    }
+    else{
+        printf("Invalid Input");
+    }
+
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */    
+    return 0;
+}
