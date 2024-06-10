@@ -1,0 +1,16 @@
+prime no's from n to 1
+
+include <stdio.h>
+#include "saithi.c"
+inr main()
+{
+    int a,b;
+    printf("enter two numbers");
+    scanf("%d%d",&a,&b);
+    int r1=add(a,b);
+    printf("%d\n",r1);
+    int r2=mul(a,b);
+    printf("%d",r2);
+
+ return 0;
+}
