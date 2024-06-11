@@ -1,0 +1,110 @@
+Write a program to insert an element in an array at the given position. If the position where the element is to be inserted is greater than the size of the array display “Invalid Input”.
+
+Input Format
+
+The first integer corresponds to the size of the array. Read n elements into an array line by line Next integer corresponds to the position where the element is to be inserted. Next integer corresponds to the element to be inserted.
+
+Constraints
+
+1<=n<=10^7
+
+Output Format
+
+Print array after insertion
+
+Sample Input 0
+
+5
+1
+2
+3
+4
+5
+4
+10
+Sample Output 0
+
+1
+2
+3
+10
+4
+5
+Sample Input 1
+
+4
+12
+55
+24
+65
+8
+22
+Sample Output 1
+
+Invalid Input
+Sample Input 2
+
+6
+23
+55
+12
+87
+44
+22
+3
+99
+Sample Output 2
+
+23
+55
+99
+12
+87
+44
+22
+Submissions: 257
+Max Score: 0
+Difficulty: Medium
+Rate This Challenge:
+
+    
+More
+#include <stdio.h>
+
+int main() {
+    int n, pos, element;
+    
+    // Input size of the array
+    scanf("%d", &n);
+    int arr[n+1]; // Increase size of array to accommodate new element
+    
+    // Input elements of the array
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+    
+    // Input position and element to be inserted
+    scanf("%d", &pos);
+    scanf("%d", &element);
+    
+    // Check if position is valid
+    if (pos < 1 || pos > n+1) {
+        printf("Invalid Input\n");
+        return 0;
+    }
+    
+    // Shift elements to the right to make space for new element
+    for (int i = n; i >= pos; i--) {
+        arr[i] = arr[i-1];
+    }
+    
+    // Insert the element at the given position
+    arr[pos-1] = element;
+    
+    // Print the array after insertion
+    for (int i = 0; i < n+1; i++) {
+        printf("%d\n", arr[i]);
+    }
+    
+    return 0;
+}
