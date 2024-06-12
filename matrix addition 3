@@ -1,0 +1,120 @@
+Write a program for Matrix Addition
+
+Input Format
+
+Enter row size Enter column size Enter elements for first matrix line by line Enter elements for second matrix line by line
+
+Constraints
+
+1<=n<=10^7
+
+Output Format
+
+Addition of a matrix
+
+Sample Input 0
+
+2
+2
+1
+2
+3
+4
+1
+2
+3
+4
+Sample Output 0
+
+2 4
+6 8
+Sample Input 1
+
+2
+3
+1
+2
+3
+4
+5
+6
+6
+5
+4
+3
+2
+1
+Sample Output 1
+
+7 7 7
+7 7 7
+Submissions: 122
+Max Score: 0
+Difficulty: Medium
+Rate This Challenge:
+
+    
+More
+ 
+1
+#include <stdio.h>
+2
+​
+3
+int main() {
+4
+    int rows, cols;
+5
+    
+6
+    
+7
+    scanf("%d %d", &rows, &cols);
+8
+    
+9
+    int first_matrix[rows][cols], second_matrix[rows][cols], result_matrix[rows][cols];
+10
+    
+11
+    
+12
+    for (int i = 0; i < rows; i++)
+13
+        for (int j = 0; j < cols; j++)
+14
+            scanf("%d", &first_matrix[i][j]);
+15
+    
+16
+    
+17
+    for (int i = 0; i < rows; i++)
+18
+        for (int j = 0; j < cols; j++)
+19
+            scanf("%d", &second_matrix[i][j]);
+20
+    
+21
+    
+22
+    for (int i = 0; i < rows; i++) {
+23
+        for (int j = 0; j < cols; j++) {
+24
+            result_matrix[i][j] = first_matrix[i][j] + second_matrix[i][j];
+25
+            printf("%d ", result_matrix[i][j]);
+26
+        }
+27
+        printf("\n");
+28
+    }
+29
+​
+30
+    return 0;
+31
+}
